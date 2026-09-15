@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: auto;
+}
+
+/* Lenis (JS-driven inertia smooth scroll) takes over from here — this stops it fighting
+   native CSS smooth-scroll for the anchor jumps it also handles. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+html.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  background: #f5f3ee;
+  color: #121009;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #ede6d5;
+  color: #121009;
+}
+
+/* Faint film-grain — barely-there texture so flat colour reads as material, not plastic. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%25" height="100%25" filter="url(%23n)"/></svg>');
+}
+
+img {
+  filter: saturate(0.97) contrast(1.02);
+}
+
+/* Thin animated underline used by the primary nav + text links — draws in on hover instead of a colour swap. */
+.underline-grow {
+  position: relative;
+}
+.underline-grow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.underline-grow:hover::after {
+  transform: scaleX(1);
+}
+
+/* Tabular numerals for stats, prices and distances — keeps digits aligned as they animate/change. */
+.num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
