@@ -22,6 +22,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+:root {
+  --font-inter: "Inter";
+  --font-cormorant: "Cormorant Garamond";
+}
+
 ::selection {
   background: #ede6d5;
   color: #121009;
