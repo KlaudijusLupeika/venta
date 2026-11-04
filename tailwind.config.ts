@@ -20,6 +20,7 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-fraunces)", "Georgia", "Times New Roman", "serif"],
         sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        logo: ["var(--font-cormorant)", "Georgia", "Times New Roman", "serif"],
       },
       maxWidth: {
         wrap: "1280px",

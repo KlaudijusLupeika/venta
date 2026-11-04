@@ -16,13 +16,30 @@ export const business = {
     "https://www.google.com/maps/dir/?api=1&destination=Stoties+g.+36%2C+Venta%2C+Lietuva",
 };
 
+// Top nav now only carries links to the shared, always-visible sections (both stays'
+// content lives behind the property tabs instead — see PropertyTabs/PropertyTabContext).
 export const nav: { href: string; label: Bi }[] = [
-  { href: "#house", label: { en: "About", lt: "Apie" } },
-  { href: "#rooms", label: { en: "Rooms", lt: "Kambariai" } },
-  { href: "#amenities", label: { en: "Amenities", lt: "Patogumai" } },
-  { href: "#location", label: { en: "Location", lt: "Vieta" } },
+  { href: "#compare", label: { en: "Compare", lt: "Palyginti" } },
   { href: "#contact", label: { en: "Contact", lt: "Kontaktai" } },
 ];
+
+// The two stays, as short display names used on the tab switcher, comparison table,
+// and anywhere else both properties need a consistent, friendly label. "Venta City
+// Apartments" remains the overall brand (logo, footer, legal/Booking.com listing name).
+export const propertyTabs = {
+  apartment: {
+    key: "apartment" as const,
+    name: { en: "Warm Home", lt: "Šilti namai" } as Bi,
+    tagline: { en: "Traditional house", lt: "Tradicinis namas" } as Bi,
+    thumb: "/images/house-exterior-hq.jpg",
+  },
+  flat: {
+    key: "flat" as const,
+    name: { en: "Modern Flat", lt: "Modernus butas" } as Bi,
+    tagline: { en: "Design-led apartment", lt: "Dizainerio butas" } as Bi,
+    thumb: "/images/flat-living-room-1.jpg",
+  },
+};
 
 export const hero = {
   title: {
@@ -82,7 +99,7 @@ export const marqueeItems: Bi[] = [
 ];
 
 export const house = {
-  eyebrow: { en: "The House", lt: "Namas" } as Bi,
+  eyebrow: { en: "Warm Home", lt: "Šilti namai" } as Bi,
   title: {
     en: "A quiet street, a familiar welcome",
     lt: "Rami gatvė, jaukus sutikimas",
@@ -114,8 +131,8 @@ export const welcome = {
     lt: "Erdvė visai šeimai",
   } as Bi,
   body: {
-    en: "Venta City Apartments is a full house, not just a room — four bedrooms, two separate living areas, a well-equipped kitchen, and a table that seats eight. Built for families and groups who want to stay together without living on top of one another.",
-    lt: "Venta City Apartments — tai visas namas, o ne tik kambarys: keturi miegamieji, dvi atskiros svetainės, pilnai įrengta virtuvė ir aštuonių vietų stalas. Sukurta šeimoms ir draugų kompanijoms, norinčioms atostogauti kartu, bet netrukdyti vienas kitam.",
+    en: "Warm Home is a full house, not just a room — four bedrooms, two separate living areas, a well-equipped kitchen, and a table that seats eight. Built for families and groups who want to stay together without living on top of one another.",
+    lt: "Šilti namai — tai visas namas, o ne tik kambarys: keturi miegamieji, dvi atskiros svetainės, pilnai įrengta virtuvė ir aštuonių vietų stalas. Sukurta šeimoms ir draugų kompanijoms, norinčioms atostogauti kartu, bet netrukdyti vienas kitam.",
   } as Bi,
 };
 
@@ -524,4 +541,264 @@ export const footer = {
   checkAvailability: { en: "Check availability", lt: "Tikrinti laisvas datas" } as Bi,
   madeWith: { en: "Made with care, in Venta", lt: "Sukurta su rūpesčiu, Ventoje" } as Bi,
   copyright: `© ${new Date().getFullYear()} Venta City Apartments`,
+};
+
+// ———————————————————————————————————————————————————————————————————————
+// Second property — a fully renovated flat. Address and a few specifics are
+// placeholder (lorem ipsum) until the real details are provided; room types,
+// layout and amenities below are described from the actual property photos.
+// ———————————————————————————————————————————————————————————————————————
+
+export const flatBusiness = {
+  name: "Modern Flat",
+  address: "Lorem ipsum g. 12, Lorem ipsum, Lietuva", // TODO: replace with the real address
+  addressQuery: "Lorem ipsum g. 12, Lorem ipsum, Lietuva", // TODO: used in Google Maps links once the address is confirmed
+  email: business.email,
+  phone: business.phone,
+};
+
+export const flatHero = {
+  eyebrow: { en: "Our Second Stay", lt: "Antroji mūsų viešnagė" } as Bi,
+  title: {
+    line1: { en: "A sleek, modern flat", lt: "Modernus, jaukus butas" },
+    emphasis: { en: "for your stay", lt: "jūsų viešnagei" },
+  },
+  sub: {
+    en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fully renovated, design-led flat with a designer bathroom, full kitchen and a private balcony.",
+    lt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pilnai atnaujintas, dizaino sprendimų pilnas butas su dizainerišku vonios kambariu, pilna virtuve ir privačiu balkonu.",
+  } as Bi,
+  ctaPrimary: { en: "Plan Your Stay", lt: "Planuoti viešnagę" } as Bi,
+  ctaGhost: { en: "See the Flat", lt: "Apžiūrėti butą" } as Bi,
+  tagline: {
+    en: "Lorem ipsum dolor sit amet, consectetur.",
+    lt: "Lorem ipsum dolor sit amet, consectetur.",
+  } as Bi,
+};
+
+export const flatStats: { value: number; suffix: string; label: Bi }[] = [
+  { value: 4, suffix: "", label: { en: "Guests, comfortably", lt: "Svečiai patogiai" } },
+  { value: 2, suffix: "", label: { en: "Bedrooms", lt: "Miegamieji" } },
+  { value: 1, suffix: "", label: { en: "Bathroom", lt: "Vonios kambarys" } },
+];
+
+export const flatAbout = {
+  eyebrow: { en: "Modern Flat", lt: "Modernus butas" } as Bi,
+  title: {
+    en: "Lorem ipsum dolor sit amet",
+    lt: "Lorem ipsum dolor sit amet",
+  } as Bi,
+  body: {
+    en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    lt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  } as Bi,
+  features: [
+    { en: "Keyless smart entry", lt: "Įėjimas išmaniąja spynele" },
+    { en: "Full kitchen with oven, hob & washing machine", lt: "Pilna virtuvė su orkaite, kaitlente ir skalbimo mašina" },
+    { en: "Private balcony", lt: "Privatus balkonas" },
+  ] as Bi[],
+};
+
+export const flatRooms = {
+  eyebrow: { en: "Rooms", lt: "Kambariai" } as Bi,
+  title: { en: "A closer look inside", lt: "Arčiau pažvelkime į vidų" } as Bi,
+};
+
+export const flatRoomCards: RoomCard[] = [
+  {
+    id: "flat-living-room-1",
+    image: "/images/flat-living-room-1.jpg",
+    category: "common",
+    caption: { en: "Living Room", lt: "Svetainė" },
+    subcaption: { en: "Leather sectional & wall-mounted TV", lt: "Odinė sofa ir ant sienos pakabintas TV" },
+  },
+  {
+    id: "flat-living-room-2",
+    image: "/images/flat-living-room-2.jpg",
+    category: "common",
+    caption: { en: "Living Room", lt: "Svetainė" },
+    subcaption: { en: "Bright, with a view onto the courtyard", lt: "Šviesi, su vaizdu į kiemą" },
+  },
+  {
+    id: "flat-kitchen",
+    image: "/images/flat-kitchen.jpg",
+    category: "dining",
+    caption: { en: "Kitchen", lt: "Virtuvė" },
+    subcaption: { en: "Fully equipped, built-in appliances", lt: "Pilnai įrengta, integruota technika" },
+  },
+  {
+    id: "flat-dining",
+    image: "/images/flat-dining.jpg",
+    category: "dining",
+    caption: { en: "Dining Area", lt: "Valgomasis" },
+    subcaption: { en: "Seats four, just off the kitchen", lt: "Keturios vietos, šalia virtuvės" },
+  },
+  {
+    id: "flat-bedroom-1",
+    image: "/images/flat-bedroom-1.jpg",
+    category: "bedroom",
+    caption: { en: "Bedroom", lt: "Miegamasis" },
+    subcaption: { en: "Multiple beds, bright and spacious", lt: "Kelios lovos, šviesu ir erdvu" },
+  },
+  {
+    id: "flat-bedroom-2",
+    image: "/images/flat-bedroom-2.jpg",
+    category: "bedroom",
+    caption: { en: "Bedroom", lt: "Miegamasis" },
+    subcaption: { en: "Quiet corner room", lt: "Ramus kambarys kampe" },
+  },
+  {
+    id: "flat-bathroom-1",
+    image: "/images/flat-bathroom-1.jpg",
+    category: "bathroom",
+    caption: { en: "Bathroom", lt: "Vonios kambarys" },
+    subcaption: { en: "Designer fittings, walk-in shower", lt: "Dizaino detalės, dušo kabina" },
+  },
+  {
+    id: "flat-bathroom-2",
+    image: "/images/flat-bathroom-2.jpg",
+    category: "bathroom",
+    caption: { en: "Rainfall Shower", lt: "Lietaus dušas" },
+    subcaption: { en: "Stone tile, black fittings", lt: "Akmens plytelės, juodos detalės" },
+  },
+  {
+    id: "flat-balcony",
+    image: "/images/flat-balcony.jpg",
+    category: "common",
+    caption: { en: "Balcony", lt: "Balkonas" },
+    subcaption: { en: "A quiet spot overlooking the courtyard", lt: "Rami vieta su vaizdu į kiemą" },
+  },
+  {
+    id: "flat-entryway",
+    image: "/images/flat-entryway.jpg",
+    category: "common",
+    caption: { en: "Entryway", lt: "Prieškambaris" },
+    subcaption: { en: "Keyless entry, built-in storage", lt: "Įėjimas be rakto, integruota spinta" },
+  },
+];
+
+export const flatAmenities = {
+  eyebrow: { en: "Amenities", lt: "Patogumai" } as Bi,
+  title: { en: "Modern, down to the details", lt: "Moderniai, iki smulkmenų" } as Bi,
+  items: [
+    {
+      icon: "wifi",
+      title: { en: "Free WiFi", lt: "Nemokamas WiFi" },
+      body: {
+        en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        lt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      },
+    },
+    {
+      icon: "tv",
+      title: { en: "Flat-Screen TV", lt: "Plokščiaekranis TV" },
+      body: {
+        en: "Wall-mounted in the living room, ready to settle in.",
+        lt: "Pakabintas svetainėje — tik atsisėsk ir atsipalaiduok.",
+      },
+    },
+    {
+      icon: "washer",
+      title: { en: "Washing Machine", lt: "Skalbimo mašina" },
+      body: {
+        en: "Full-size machine built into the kitchen.",
+        lt: "Pilno dydžio skalbimo mašina, įmontuota virtuvėje.",
+      },
+    },
+    {
+      icon: "balcony",
+      title: { en: "Private Balcony", lt: "Privatus balkonas" },
+      body: {
+        en: "A quiet spot for morning coffee or evening air.",
+        lt: "Rami vieta rytinei kavai ar vakariniam orui pakvėpuoti.",
+      },
+    },
+    {
+      icon: "lock",
+      title: { en: "Keyless Smart Entry", lt: "Įėjimas be rakto" },
+      body: {
+        en: "A keypad lock on the front door — no keys to lose or hand over.",
+        lt: "Įėjimo durys su kodine spynele — nereikia rakto.",
+      },
+    },
+    {
+      icon: "kitchen",
+      title: { en: "Full Kitchen", lt: "Pilna virtuvė" },
+      body: {
+        en: "Oven, induction hob, fridge-freezer and everything you need to cook.",
+        lt: "Orkaitė, indukcinė kaitlentė, šaldytuvas ir visa reikalinga virtuvės įranga.",
+      },
+    },
+  ] as { icon: string; title: Bi; body: Bi }[],
+};
+
+export const comparison = {
+  eyebrow: { en: "Which One Is Right for You?", lt: "Kuri vieta jums tinka?" } as Bi,
+  title: { en: "Compare the Two Stays", lt: "Palyginkite abi viešnages" } as Bi,
+  intro: {
+    en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit — a quick side-by-side to help you pick, at a glance.",
+    lt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit — greitas palyginimas, padėsiantis apsispręsti iš karto.",
+  } as Bi,
+  columns: {
+    apartment: "Warm Home",
+    flat: "Modern Flat",
+  },
+  rows: [
+    { label: { en: "Guests", lt: "Svečiai" } as Bi, apartment: "7", flat: "4" },
+    { label: { en: "Bedrooms", lt: "Miegamieji" } as Bi, apartment: "4", flat: "2" },
+    {
+      label: { en: "Style", lt: "Stilius" } as Bi,
+      apartment: { en: "Warm, traditional house", lt: "Šiltas, tradicinis namas" } as Bi,
+      flat: { en: "Modern, design-led flat", lt: "Modernus, dizainerio sukurtas butas" } as Bi,
+    },
+    {
+      label: { en: "Outdoor space", lt: "Lauko erdvė" } as Bi,
+      apartment: { en: "Garden & grill", lt: "Sodas ir kepsninė" } as Bi,
+      flat: { en: "Private balcony", lt: "Privatus balkonas" } as Bi,
+    },
+    {
+      label: { en: "Entry", lt: "Įėjimas" } as Bi,
+      apartment: { en: "Traditional key, hosted personally", lt: "Tradicinis raktas, asmeniškai priimame" } as Bi,
+      flat: { en: "Keyless smart entry", lt: "Įėjimas be rakto" } as Bi,
+    },
+    {
+      label: { en: "Guest rating", lt: "Svečių įvertinimas" } as Bi,
+      apartment: "10/10 — Booking.com",
+      flat: { en: "Lorem ipsum (coming soon)", lt: "Lorem ipsum (bus netrukus)" } as Bi,
+    },
+    {
+      label: { en: "Best for", lt: "Tinka" } as Bi,
+      apartment: { en: "Families & groups who want space", lt: "Šeimoms ir grupėms, norinčioms erdvės" } as Bi,
+      flat: { en: "Couples & small groups who want style", lt: "Poroms ir mažoms grupėms, vertinančioms stilių" } as Bi,
+    },
+  ] as { label: Bi; apartment: string | Bi; flat: string | Bi }[],
+  pros: {
+    apartment: {
+      title: { en: "Why Choose Warm Home", lt: "Kodėl rinktis Šiltus namus" } as Bi,
+      items: [
+        { en: "Whole house, exclusively yours", lt: "Visas namas — tik jums" },
+        { en: "Garden, grill & secure parking", lt: "Sodas, kepsninė ir saugus stovėjimas" },
+        { en: "Verified 10/10 guest rating", lt: "Patvirtintas 10/10 svečių įvertinimas" },
+        { en: "Walk to the river & town centre", lt: "Pėsčiomis iki upės ir centro" },
+      ] as Bi[],
+    },
+    flat: {
+      title: { en: "Why Choose Modern Flat", lt: "Kodėl rinktis Modernų butą" } as Bi,
+      items: [
+        { en: "Freshly renovated, designer interior", lt: "Neseniai atnaujintas, dizainerio interjeras" },
+        { en: "Rainfall shower & designer bathroom", lt: "Lietaus dušas ir dizainerio vonios kambarys" },
+        { en: "Keyless smart entry", lt: "Įėjimas be rakto" },
+        { en: "Private balcony", lt: "Privatus balkonas" },
+      ] as Bi[],
+    },
+  },
+};
+
+export const flatLocation = {
+  eyebrow: { en: "Location", lt: "Vieta" } as Bi,
+  title: { en: "Address coming soon", lt: "Adresas bus paskelbtas" } as Bi,
+  body: {
+    en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. The exact address and map will be added here shortly — reach out and we'll be glad to share it directly.",
+    lt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tikslus adresas ir žemėlapis bus pridėti netrukus — susisiekite ir mielai juo pasidalinsime.",
+  } as Bi,
+  cta: { en: "Ask Us Directly", lt: "Klauskite tiesiogiai" } as Bi,
 };

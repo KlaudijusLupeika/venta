@@ -14,7 +14,7 @@ export default function SmoothScroll() {
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       autoRaf: true,
-      anchors: { offset: -88 },
+      anchors: { offset: -72 },
     });
 
     return () => lenis.destroy();

@@ -82,7 +82,8 @@ export default function Lightbox({ cards, index, onClose, onIndexChange }: Light
               src={card.image}
               alt={t(card.caption.en, card.caption.lt)}
               fill
-              sizes="90vw"
+              sizes="(max-width: 896px) 90vw, 896px"
+              quality={90}
               className="object-contain bg-black"
               priority
             />

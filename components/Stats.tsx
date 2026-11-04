@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/lib/LanguageContext";
-import { stats, hero } from "@/lib/content";
+import type { Bi } from "@/lib/content";
 import Reveal from "./Reveal";
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
@@ -37,8 +37,22 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
   );
 }
 
-export default function Stats() {
+// Flex-basis per item, tuned per stat count so rows of 2 (mobile) and N (desktop) both land evenly.
+const basisClasses: Record<number, string> = {
+  2: "w-[calc(50%-12px)]",
+  3: "w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)]",
+  4: "w-[calc(50%-12px)] sm:w-[calc(25%-18px)]",
+  5: "w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(20%-19.2px)]",
+};
+
+interface StatsProps {
+  stats: { value: number; suffix: string; label: Bi }[];
+  tagline: Bi;
+}
+
+export default function Stats({ stats, tagline }: StatsProps) {
   const { t } = useLanguage();
+  const basis = basisClasses[stats.length] ?? basisClasses[5];
 
   return (
     <section className="stats bg-ink text-white">
@@ -48,10 +62,7 @@ export default function Stats() {
       >
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-8 text-center md:text-left md:justify-start md:border-r md:border-white/10 md:py-12 md:pr-12">
           {stats.map((s) => (
-            <div
-              key={s.label.en}
-              className="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(20%-19.2px)]"
-            >
+            <div key={s.label.en} className={basis}>
               <b className="num block font-serif font-normal text-white text-[30px] md:text-[38px]">
                 <CountUp target={s.value} suffix={s.suffix} />
               </b>
@@ -62,7 +73,7 @@ export default function Stats() {
           ))}
         </div>
         <div className="font-serif italic text-[18px] md:text-[20px] text-white/80 max-w-[280px] mx-auto md:mx-0 text-center md:text-left leading-[1.5]">
-          {t(hero.tagline.en, hero.tagline.lt)}
+          {t(tagline.en, tagline.lt)}
         </div>
       </Reveal>
     </section>

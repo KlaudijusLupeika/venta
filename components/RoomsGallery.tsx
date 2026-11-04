@@ -4,21 +4,29 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "@/lib/LanguageContext";
-import { rooms, roomCards, roomFilters, type RoomCategory } from "@/lib/content";
+import type { Bi, RoomCard, RoomCategory } from "@/lib/content";
 import Reveal from "./Reveal";
 import TiltCard from "./TiltCard";
 import Lightbox from "./Lightbox";
 
 type FilterKey = "all" | RoomCategory;
 
-export default function RoomsGallery() {
+interface RoomsGalleryProps {
+  id?: string;
+  eyebrow: Bi;
+  title: Bi;
+  cards: RoomCard[];
+  filters: { key: FilterKey; label: Bi }[];
+}
+
+export default function RoomsGallery({ id = "rooms", eyebrow, title, cards, filters }: RoomsGalleryProps) {
   const { t } = useLanguage();
   const [filter, setFilter] = useState<FilterKey>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const visible = useMemo(
-    () => (filter === "all" ? roomCards : roomCards.filter((c) => c.category === filter)),
-    [filter]
+    () => (filter === "all" ? cards : cards.filter((c) => c.category === filter)),
+    [filter, cards]
   );
 
   function openLightbox(id: string) {
@@ -27,21 +35,21 @@ export default function RoomsGallery() {
   }
 
   return (
-    <section id="rooms" className="py-16 md:py-24 bg-paper">
+    <section id={id} className="py-16 md:py-24 bg-paper">
       <div className="max-w-wrap mx-auto px-5 md:px-8">
         <div className="flex flex-col items-center text-center md:items-end md:text-left md:flex-row md:justify-between gap-8 mb-12">
           <Reveal>
             <div className="inline-flex items-center gap-2 text-[12px] font-semibold tracking-[0.18em] uppercase text-stone mb-4">
               <span className="w-[22px] h-px bg-accent inline-block" />
-              {t(rooms.eyebrow.en, rooms.eyebrow.lt)}
+              {t(eyebrow.en, eyebrow.lt)}
             </div>
             <h2 className="font-serif font-normal text-[34px] md:text-[48px] leading-[1.08] tracking-[-0.01em] text-ink">
-              {t(rooms.title.en, rooms.title.lt)}
+              {t(title.en, title.lt)}
             </h2>
           </Reveal>
 
           <Reveal delay={0.1} className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 md:pb-2">
-            {roomFilters.map((f) => (
+            {filters.map((f) => (
               <button
                 key={f.key}
                 onClick={() => setFilter(f.key)}
@@ -79,6 +87,7 @@ export default function RoomsGallery() {
                       alt={t(card.caption.en, card.caption.lt)}
                       fill
                       sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+                      quality={88}
                       className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                     />
                   </div>

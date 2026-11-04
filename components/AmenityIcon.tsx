@@ -57,6 +57,43 @@ const paths: Record<string, JSX.Element> = {
       <path d="M13 3v4M9.5 4.5 11 7M16.5 4.5 15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </>
   ),
+  washer: (
+    <>
+      <rect x="3.5" y="3.5" width="19" height="19" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="13" cy="15" r="6" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="13" cy="15" r="2.4" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="7.8" cy="6.8" r="0.9" fill="currentColor" />
+      <circle cx="11.2" cy="6.8" r="0.9" fill="currentColor" />
+    </>
+  ),
+  balcony: (
+    <>
+      <path d="M7 6.2 13 3l6 3.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 11h20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M5.5 11v10M9.8 11v10M14.2 11v10M18.5 11v10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+      <path d="M3 21h20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </>
+  ),
+  lock: (
+    <>
+      <rect x="7" y="3.5" width="12" height="19" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="10.3" cy="9" r="0.9" fill="currentColor" />
+      <circle cx="13" cy="9" r="0.9" fill="currentColor" />
+      <circle cx="15.7" cy="9" r="0.9" fill="currentColor" />
+      <circle cx="10.3" cy="13" r="0.9" fill="currentColor" />
+      <circle cx="13" cy="13" r="0.9" fill="currentColor" />
+      <circle cx="15.7" cy="13" r="0.9" fill="currentColor" />
+      <rect x="10.3" y="16.5" width="5.4" height="3" rx="1" stroke="currentColor" strokeWidth="1.3" />
+    </>
+  ),
+  kitchen: (
+    <>
+      <path d="M4.5 11.5h17v4.5a7 7 0 0 1-7 7h-3a7 7 0 0 1-7-7v-4.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M2.5 11.5h21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M3.5 8.5h2.5M20 8.5h2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="13" cy="8.7" r="1.1" fill="currentColor" />
+    </>
+  ),
 };
 
 export default function AmenityIcon({ name, className = "" }: { name: string; className?: string }) {

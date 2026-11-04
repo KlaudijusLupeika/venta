@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { footer, nav, business } from "@/lib/content";
+import Logo from "./Logo";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -11,11 +12,8 @@ export default function Footer() {
       <div className="max-w-wrap mx-auto px-5 md:px-8">
         <div className="flex flex-col items-center text-center md:items-start md:text-left md:flex-row justify-between gap-14 pb-14 border-b border-white/10">
           <div>
-            <div className="flex items-baseline justify-center md:justify-start gap-2 font-serif text-[21px]">
-              <span className="font-medium">Venta City</span>
-              <span className="text-[11px] font-sans uppercase tracking-[0.16em] text-footer-paper/50">Apartments</span>
-            </div>
-            <p className="mt-4 font-serif italic text-footer-paper/55 max-w-[280px] mx-auto md:mx-0 leading-[1.5]">
+            <Logo size="lg" theme="dark" className="mx-auto md:mx-0" />
+            <p className="mt-6 font-serif italic text-footer-paper/55 max-w-[280px] mx-auto md:mx-0 leading-[1.5]">
               &ldquo;{t(footer.tagline.en, footer.tagline.lt)}&rdquo;
             </p>
           </div>

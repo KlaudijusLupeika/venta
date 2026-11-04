@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import { PropertyTabProvider } from "@/lib/PropertyTabContext";
 import { business } from "@/lib/content";
 import SmoothScroll from "@/components/SmoothScroll";
 
-const montserrat = Montserrat({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-montserrat",
+  variable: "--font-cormorant",
   display: "swap",
 });
 
@@ -28,12 +29,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="font-sans overflow-x-hidden">
         <LanguageProvider>
-          <SmoothScroll />
-          <div className="grain" aria-hidden="true" />
-          {children}
+          <PropertyTabProvider>
+            <SmoothScroll />
+            <div className="grain" aria-hidden="true" />
+            {children}
+          </PropertyTabProvider>
         </LanguageProvider>
       </body>
     </html>
