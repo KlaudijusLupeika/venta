@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 export type Lang = "en" | "lt";
 
@@ -16,6 +16,21 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(undefine
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("en");
   const t = (en: string, lt: string) => (lang === "lt" ? lt : en);
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.title = lang === "lt"
+      ? "Venta City Apartments — poilsis Ventoje, Lietuvoje"
+      : "Venta City Apartments — Whole House Rental in Venta, Lithuania";
+
+    const description = document.querySelector('meta[name="description"]');
+    description?.setAttribute(
+      "content",
+      lang === "lt"
+        ? "Visas namas jūsų poilsiui Ventoje. Keturi miegamieji, dvi svetainės, sodas ir saugi automobilių stovėjimo vieta netoli miesto centro."
+        : "A whole house to yourselves in Venta, Lithuania. Four bedrooms, two living rooms, a garden, secure parking — walking distance to the town centre."
+    );
+  }, [lang]);
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>

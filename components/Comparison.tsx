@@ -35,26 +35,26 @@ export default function Comparison() {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-14 max-w-[780px] mx-auto">
-          <div className="grid grid-cols-[1.1fr_1fr_1fr] gap-x-2 sm:gap-x-6 pb-4 border-b border-hairline">
+          <div className="grid grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,1fr)] gap-x-2 sm:gap-x-6 pb-4 border-b border-hairline">
             <span />
-            <span className="text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.08em] text-ink text-center">
-              {comparison.columns.apartment}
+            <span className="min-w-0 break-words text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.08em] text-ink text-center">
+              {t(comparison.columns.apartment.en, comparison.columns.apartment.lt)}
             </span>
-            <span className="text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.08em] text-ink text-center">
-              {comparison.columns.flat}
+            <span className="min-w-0 break-words text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.08em] text-ink text-center">
+              {t(comparison.columns.flat.en, comparison.columns.flat.lt)}
             </span>
           </div>
 
           {comparison.rows.map((row) => (
             <div
               key={row.label.en}
-              className="grid grid-cols-[1.1fr_1fr_1fr] gap-x-2 sm:gap-x-6 py-4 border-b border-hairline items-center"
+              className="grid grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,1fr)] gap-x-2 sm:gap-x-6 py-4 border-b border-hairline items-center"
             >
-              <span className="text-[12.5px] sm:text-[14px] font-medium text-stone">{t(row.label.en, row.label.lt)}</span>
-              <span className="text-[12.5px] sm:text-[14px] text-ink text-center leading-snug">
+              <span className="min-w-0 break-words text-[12.5px] sm:text-[14px] font-medium text-stone">{t(row.label.en, row.label.lt)}</span>
+              <span className="min-w-0 break-words text-[12.5px] sm:text-[14px] text-ink text-center leading-snug">
                 {isBi(row.apartment) ? t(row.apartment.en, row.apartment.lt) : row.apartment}
               </span>
-              <span className="text-[12.5px] sm:text-[14px] text-ink text-center leading-snug">
+              <span className="min-w-0 break-words text-[12.5px] sm:text-[14px] text-ink text-center leading-snug">
                 {isBi(row.flat) ? t(row.flat.en, row.flat.lt) : row.flat}
               </span>
             </div>

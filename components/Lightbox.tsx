@@ -48,7 +48,7 @@ export default function Lightbox({ cards, index, onClose, onIndexChange }: Light
       >
         <button
           onClick={onClose}
-          aria-label="Close"
+          aria-label={t("Close", "Uždaryti")}
           className="absolute top-5 right-5 text-white/80 hover:text-white p-2"
         >
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -61,7 +61,7 @@ export default function Lightbox({ cards, index, onClose, onIndexChange }: Light
             e.stopPropagation();
             prev();
           }}
-          aria-label="Previous"
+          aria-label={t("Previous", "Ankstesnė nuotrauka")}
           className="absolute left-3 md:left-8 text-white/80 hover:text-white p-3"
         >
           <svg width="20" height="20" viewBox="0 0 18 18" fill="none">
@@ -98,7 +98,7 @@ export default function Lightbox({ cards, index, onClose, onIndexChange }: Light
             e.stopPropagation();
             next();
           }}
-          aria-label="Next"
+          aria-label={t("Next", "Kita nuotrauka")}
           className="absolute right-3 md:right-8 text-white/80 hover:text-white p-3"
         >
           <svg width="20" height="20" viewBox="0 0 18 18" fill="none">

@@ -6,7 +6,6 @@ import Stats from "@/components/Stats";
 import Marquee from "@/components/Marquee";
 import HouseSection from "@/components/HouseSection";
 import RoomsGallery from "@/components/RoomsGallery";
-import PullQuote from "@/components/PullQuote";
 import Amenities from "@/components/Amenities";
 import Location from "@/components/Location";
 import GoodToKnow from "@/components/GoodToKnow";
@@ -38,7 +37,6 @@ export default function Home() {
       <Stats stats={stats} tagline={hero.tagline} />
       <Marquee />
       <RoomsGallery id="rooms" eyebrow={rooms.eyebrow} title={rooms.title} cards={roomCards} filters={roomFilters} />
-      <PullQuote />
       <Amenities id="amenities" eyebrow={amenities.eyebrow} title={amenities.title} items={amenities.items} details={fullAmenities} />
       <Location />
       <GoodToKnow />

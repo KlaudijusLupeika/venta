@@ -83,7 +83,8 @@ export default function Nav() {
             <div className="flex items-center gap-2 text-[12px] font-semibold tracking-[0.06em] text-stone">
               <button
                 onClick={() => setLang("en")}
-                aria-label="English"
+                aria-label={t("English", "Anglų kalba")}
+                aria-pressed={lang === "en"}
                 className={lang === "en" ? "text-ink" : ""}
               >
                 EN
@@ -91,7 +92,8 @@ export default function Nav() {
               <span className="opacity-40">/</span>
               <button
                 onClick={() => setLang("lt")}
-                aria-label="Lietuviškai"
+                aria-label={t("Lithuanian", "Lietuvių kalba")}
+                aria-pressed={lang === "lt"}
                 className={lang === "lt" ? "text-ink" : ""}
               >
                 LT
@@ -105,7 +107,7 @@ export default function Nav() {
             </a>
             <button
               onClick={() => setMenuOpen((v) => !v)}
-              aria-label="Menu"
+              aria-label={t("Menu", "Meniu")}
               className="flex lg:hidden p-2 -mr-2 text-ink"
             >
               <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
@@ -138,6 +140,8 @@ export default function Nav() {
           <div className="mt-6 flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.08em]">
             <button
               onClick={() => setLang("en")}
+              aria-label={t("English", "Anglų kalba")}
+              aria-pressed={lang === "en"}
               className={lang === "en" ? "text-ink" : "text-stone"}
             >
               EN
@@ -145,6 +149,8 @@ export default function Nav() {
             <span className="opacity-40">/</span>
             <button
               onClick={() => setLang("lt")}
+              aria-label={t("Lithuanian", "Lietuvių kalba")}
+              aria-pressed={lang === "lt"}
               className={lang === "lt" ? "text-ink" : "text-stone"}
             >
               LT

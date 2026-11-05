@@ -29,7 +29,9 @@ export default function Contact() {
 
           <Reveal delay={0.2} className="border border-hairline bg-linen p-8 text-center md:text-left">
             <h3 className="font-serif font-normal text-[20px] text-ink mb-2">{business.name}</h3>
-            <p className="text-stone text-[14.5px] leading-[1.6]">{business.address}</p>
+            <p className="text-stone text-[14.5px] leading-[1.6]">
+              {t("Stoties g. 36, Venta, Lithuania", "Stoties g. 36, Venta, Lietuva")}
+            </p>
 
             <div className="mt-8 flex flex-col gap-3">
               <a

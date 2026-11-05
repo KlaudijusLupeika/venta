@@ -6,7 +6,7 @@ export type Bi = { en: string; lt: string };
 
 export const business = {
   name: "Venta City Apartments",
-  address: "Stoties g. 36, Venta, Lietuva",
+  address: "Stoties g. 36, Venta, Lithuania",
   addressQuery: "Stoties g. 36, Venta, Lietuva", // used in Google Maps links — update if the address changes
   email: "hello@ventacityapartments.lt", // TODO: replace with your real contact email before launch
   phone: "+37065287471",
@@ -29,9 +29,9 @@ export const nav: { href: string; label: Bi }[] = [
 export const propertyTabs = {
   apartment: {
     key: "apartment" as const,
-    name: { en: "Warm Home", lt: "Šilti namai" } as Bi,
+    name: { en: "Warm Home", lt: "Namas" } as Bi,
     tagline: { en: "Traditional house", lt: "Tradicinis namas" } as Bi,
-    thumb: "/images/house-exterior-hq.jpg",
+    thumb: "/images/hero-exterior.jpg",
   },
   flat: {
     key: "flat" as const,
@@ -82,7 +82,7 @@ export const rating = {
 };
 
 export const stats: { value: number; suffix: string; label: Bi }[] = [
-  { value: 7, suffix: "", label: { en: "Guests, comfortably", lt: "Svečiai patogiai" } },
+  { value: 7, suffix: "", label: { en: "Guests", lt: "Svečių skaičius" } },
   { value: 4, suffix: "", label: { en: "Bedrooms", lt: "Miegamieji" } },
   { value: 2, suffix: "", label: { en: "Living rooms", lt: "Svetainės" } },
   { value: 97, suffix: "m²", label: { en: "Whole house", lt: "Viso namo plotas" } },
@@ -99,7 +99,7 @@ export const marqueeItems: Bi[] = [
 ];
 
 export const house = {
-  eyebrow: { en: "Warm Home", lt: "Šilti namai" } as Bi,
+  eyebrow: { en: "Warm Home", lt: "Namas" } as Bi,
   title: {
     en: "A quiet street, a familiar welcome",
     lt: "Rami gatvė, jaukus sutikimas",
@@ -132,7 +132,7 @@ export const welcome = {
   } as Bi,
   body: {
     en: "Warm Home is a full house, not just a room — four bedrooms, two separate living areas, a well-equipped kitchen, and a table that seats eight. Built for families and groups who want to stay together without living on top of one another.",
-    lt: "Šilti namai — tai visas namas, o ne tik kambarys: keturi miegamieji, dvi atskiros svetainės, pilnai įrengta virtuvė ir aštuonių vietų stalas. Sukurta šeimoms ir draugų kompanijoms, norinčioms atostogauti kartu, bet netrukdyti vienas kitam.",
+    lt: "Namas — tai visas būstas, o ne tik kambarys: keturi miegamieji, dvi atskiros svetainės, pilnai įrengta virtuvė ir aštuonių vietų stalas. Jis pritaikytas šeimoms ir draugų kompanijoms, norinčioms atostogauti kartu ir turėti pakankamai erdvės.",
   } as Bi,
 };
 
@@ -465,7 +465,7 @@ export const testimonials: Testimonial[] = [
     id: "khrystyna",
     quote: {
       en: "We had a wonderful stay! The apartment was spotless, cozy, and equipped with everything we needed for a comfortable stay. The hosts were very friendly, welcoming, and helpful. Everything exceeded our expectations, and we truly enjoyed our time here.",
-      lt: "Mūsų viešnagė buvo nuostabi! Butas buvo nepriekaištingai švarus, jaukus ir aprūpintas viskuo, ko reikėjo patogiam poilsiui. Šeimininkai buvo labai draugiški, svetingi ir paslaugūs. Viskas pranoko mūsų lūkesčius.",
+      lt: "Mūsų viešnagė buvo nuostabi! Butas buvo nepriekaištingai švarus, jaukus ir aprūpintas viskuo, ko reikėjo patogiam poilsiui. Šeimininkai buvo labai draugiški, svetingi ir paslaugūs. Viskas pranoko mūsų lūkesčius, ir mums labai patiko čia apsistoti.",
     },
     name: "Khrystyna",
     country: { en: "Ukraine", lt: "Ukraina" },
@@ -475,7 +475,7 @@ export const testimonials: Testimonial[] = [
     id: "ruta",
     quote: {
       en: "A warm welcome, shown around thoroughly. You can cook — every dish you need, hairdryer, towels, washing machine, iron. Rooms are spacious and clean, with an enclosed yard for the car and a basketball hoop. This is a place I'd truly return to.",
-      lt: "Maloniai pasitiko, viską aprodė. Yra galimybė gamintis maistą, visi būtini indai, plaukų džiovintuvas, rankšluosčiai, skalbimo mašina, lygintuvas. Patalpos erdvios ir švarios. Uždaras kiemas automobiliui ir krepšinio aikštelei. Tikrai grįžčiau dar kartą.",
+      lt: "Maloniai pasitiko, viską aprodė. Yra galimybė gamintis maistą, visi būtini indai, plaukų džiovintuvas, rankšluosčiai, skalbimo mašina ir lygintuvas. Patalpos erdvios ir švarios. Uždarame kieme yra vietos automobiliui ir krepšinio lankas. Tikrai grįžčiau dar kartą.",
     },
     name: "Rūta",
     country: { en: "Lithuania", lt: "Lietuva" },
@@ -510,7 +510,7 @@ export const contact = {
     en: "Questions, dates, or a special request? Reach out and we'll help plan your stay in Venta.",
     lt: "Turite klausimų ar norite sutarti datas? Susisiekite — padėsime suplanuoti jūsų viešnagę Ventoje.",
   } as Bi,
-  callWhatsapp: { en: "Call / WhatsApp", lt: "Skambinti / WhatsApp" } as Bi,
+  callWhatsapp: { en: "Call", lt: "Skambinti" } as Bi,
   form: {
     heading: { en: "Send an Inquiry", lt: "Siųsti užklausą" } as Bi,
     name: { en: "Name", lt: "Vardas" } as Bi,
@@ -534,28 +534,16 @@ export const contact = {
 };
 
 export const footer = {
-  tagline: pullQuote,
   explore: { en: "Explore", lt: "Naršyti" } as Bi,
   visit: { en: "Visit", lt: "Apsilankyti" } as Bi,
   contactHeading: { en: "Contact", lt: "Kontaktai" } as Bi,
   checkAvailability: { en: "Check availability", lt: "Tikrinti laisvas datas" } as Bi,
-  madeWith: { en: "Made with care, in Venta", lt: "Sukurta su rūpesčiu, Ventoje" } as Bi,
   copyright: `© ${new Date().getFullYear()} Venta City Apartments`,
 };
 
 // ———————————————————————————————————————————————————————————————————————
-// Second property — a fully renovated flat. Address and a few specifics are
-// placeholder (lorem ipsum) until the real details are provided; room types,
-// layout and amenities below are described from the actual property photos.
+// Second property — a renovated flat; content below describes the property photos.
 // ———————————————————————————————————————————————————————————————————————
-
-export const flatBusiness = {
-  name: "Modern Flat",
-  address: "Lorem ipsum g. 12, Lorem ipsum, Lietuva", // TODO: replace with the real address
-  addressQuery: "Lorem ipsum g. 12, Lorem ipsum, Lietuva", // TODO: used in Google Maps links once the address is confirmed
-  email: business.email,
-  phone: business.phone,
-};
 
 export const flatHero = {
   eyebrow: { en: "Our Second Stay", lt: "Antroji mūsų viešnagė" } as Bi,
@@ -564,19 +552,19 @@ export const flatHero = {
     emphasis: { en: "for your stay", lt: "jūsų viešnagei" },
   },
   sub: {
-    en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fully renovated, design-led flat with a designer bathroom, full kitchen and a private balcony.",
-    lt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pilnai atnaujintas, dizaino sprendimų pilnas butas su dizainerišku vonios kambariu, pilna virtuve ir privačiu balkonu.",
+    en: "A recently renovated, design-led flat with a modern bathroom, full kitchen and private balcony.",
+    lt: "Neseniai atnaujintas, modernaus dizaino butas su šiuolaikišku vonios kambariu, pilnai įrengta virtuve ir privačiu balkonu.",
   } as Bi,
   ctaPrimary: { en: "Plan Your Stay", lt: "Planuoti viešnagę" } as Bi,
   ctaGhost: { en: "See the Flat", lt: "Apžiūrėti butą" } as Bi,
   tagline: {
-    en: "Lorem ipsum dolor sit amet, consectetur.",
-    lt: "Lorem ipsum dolor sit amet, consectetur.",
+    en: "Sleeps up to four, making it ideal for couples, small families, or friends traveling together.",
+    lt: "Patogiai apgyvendina iki 4 svečių – puikiai tinka poroms, mažoms šeimoms ar kartu keliaujantiems draugams.",
   } as Bi,
 };
 
 export const flatStats: { value: number; suffix: string; label: Bi }[] = [
-  { value: 4, suffix: "", label: { en: "Guests, comfortably", lt: "Svečiai patogiai" } },
+  { value: 4, suffix: "", label: { en: "Guests", lt: "Svečių skaičius" } },
   { value: 2, suffix: "", label: { en: "Bedrooms", lt: "Miegamieji" } },
   { value: 1, suffix: "", label: { en: "Bathroom", lt: "Vonios kambarys" } },
 ];
@@ -584,12 +572,12 @@ export const flatStats: { value: number; suffix: string; label: Bi }[] = [
 export const flatAbout = {
   eyebrow: { en: "Modern Flat", lt: "Modernus butas" } as Bi,
   title: {
-    en: "Lorem ipsum dolor sit amet",
-    lt: "Lorem ipsum dolor sit amet",
+    en: "A modern flat, made for an easy stay",
+    lt: "Modernus butas patogiai viešnagei",
   } as Bi,
   body: {
-    en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    lt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    en: "Settle into a recently renovated flat with a private balcony, a full kitchen and keyless entry. The comfortable living space makes it easy to unwind after a day out.",
+    lt: "Apsistokite neseniai atnaujintame bute su privačiu balkonu, pilnai įrengta virtuve ir įėjimu su kodine spyna. Patogioje svetainėje galėsite atsipalaiduoti po dienos mieste.",
   } as Bi,
   features: [
     { en: "Keyless smart entry", lt: "Įėjimas išmaniąja spynele" },
@@ -684,8 +672,8 @@ export const flatAmenities = {
       icon: "wifi",
       title: { en: "Free WiFi", lt: "Nemokamas WiFi" },
       body: {
-        en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        lt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        en: "Stay connected throughout your visit with complimentary WiFi.",
+        lt: "Viešnagės metu galėsite naudotis nemokamu belaidžiu internetu.",
       },
     },
     {
@@ -693,7 +681,7 @@ export const flatAmenities = {
       title: { en: "Flat-Screen TV", lt: "Plokščiaekranis TV" },
       body: {
         en: "Wall-mounted in the living room, ready to settle in.",
-        lt: "Pakabintas svetainėje — tik atsisėsk ir atsipalaiduok.",
+        lt: "Pakabintas svetainėje — galėsite patogiai atsisėsti ir atsipalaiduoti.",
       },
     },
     {
@@ -735,12 +723,12 @@ export const comparison = {
   eyebrow: { en: "Which One Is Right for You?", lt: "Kuri vieta jums tinka?" } as Bi,
   title: { en: "Compare the Two Stays", lt: "Palyginkite abi viešnages" } as Bi,
   intro: {
-    en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit — a quick side-by-side to help you pick, at a glance.",
-    lt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit — greitas palyginimas, padėsiantis apsispręsti iš karto.",
+    en: "Compare the key features of both stays and choose the one that suits your trip.",
+    lt: "Palyginkite svarbiausius abiejų būstų privalumus ir išsirinkite tinkamiausią savo kelionei.",
   } as Bi,
   columns: {
-    apartment: "Warm Home",
-    flat: "Modern Flat",
+    apartment: { en: "Warm Home", lt: "Šilti namai" } as Bi,
+    flat: { en: "Modern Flat", lt: "Modernus butas" } as Bi,
   },
   rows: [
     { label: { en: "Guests", lt: "Svečiai" } as Bi, apartment: "7", flat: "4" },
@@ -763,7 +751,7 @@ export const comparison = {
     {
       label: { en: "Guest rating", lt: "Svečių įvertinimas" } as Bi,
       apartment: "10/10 — Booking.com",
-      flat: { en: "Lorem ipsum (coming soon)", lt: "Lorem ipsum (bus netrukus)" } as Bi,
+      flat: { en: "Not yet rated", lt: "Kol kas neįvertintas" } as Bi,
     },
     {
       label: { en: "Best for", lt: "Tinka" } as Bi,
@@ -773,7 +761,7 @@ export const comparison = {
   ] as { label: Bi; apartment: string | Bi; flat: string | Bi }[],
   pros: {
     apartment: {
-      title: { en: "Why Choose Warm Home", lt: "Kodėl rinktis Šiltus namus" } as Bi,
+      title: { en: "Why Choose Warm Home", lt: "Kodėl rinktis namą" } as Bi,
       items: [
         { en: "Whole house, exclusively yours", lt: "Visas namas — tik jums" },
         { en: "Garden, grill & secure parking", lt: "Sodas, kepsninė ir saugus stovėjimas" },
@@ -794,11 +782,39 @@ export const comparison = {
 };
 
 export const flatLocation = {
+  ...location,
   eyebrow: { en: "Location", lt: "Vieta" } as Bi,
-  title: { en: "Address coming soon", lt: "Adresas bus paskelbtas" } as Bi,
+  title: { en: "Right where you want to be", lt: "Ten, kur norite būti" } as Bi,
   body: {
-    en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. The exact address and map will be added here shortly — reach out and we'll be glad to share it directly.",
-    lt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tikslus adresas ir žemėlapis bus pridėti netrukus — susisiekite ir mielai juo pasidalinsime.",
+    en: "Ventos g. 30, Venta — an easy walk to the town centre, with the river just 200 metres away. Shared parking nearby has plenty of space.",
+    lt: "Ventos g. 30, Venta — pėsčiomis iki miesto centro, o upė vos už 200 metrų. Netoliese esančioje bendroje automobilių stovėjimo aikštelėje vietos pakanka.",
   } as Bi,
-  cta: { en: "Ask Us Directly", lt: "Klauskite tiesiogiai" } as Bi,
+  address: { en: "Ventos g. 30, Venta, Lithuania", lt: "Ventos g. 30, Venta, Lietuva" } as Bi,
+  mapSrc: "https://maps.google.com/maps?q=Ventos%20g.%2030%2C%20Venta%2C%20Lithuania&output=embed",
+  mapTitle: { en: "Modern Flat location", lt: "Modernaus buto vieta" } as Bi,
+  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Ventos+g.+30%2C+Venta%2C+Lietuva",
+  rows: [
+    { en: "Town centre — walking distance", lt: "Miesto centras — pasiekiamas pėsčiomis" },
+    { en: "Venta River — 200 m", lt: "Ventos upė — 200 m" },
+    { en: "Shared parking with plenty of space", lt: "Bendra automobilių stovėjimo aikštelė, vietos pakanka" },
+  ] as Bi[],
+  nearby: [
+    { label: { en: "Venta River", lt: "Ventos upė" }, distance: "200 m" },
+    {
+      label: { en: "Venta town centre", lt: "Ventos miesto centras" } as Bi,
+      distance: { en: "Walking distance", lt: "Pėsčiomis" },
+    },
+    {
+      label: { en: "Grocery shops", lt: "Maisto prekių parduotuvės" } as Bi,
+      distance: { en: "Walking distance", lt: "Pėsčiomis" },
+    },
+    {
+      label: { en: "Venta Regional Park Visitor Centre", lt: "Ventos regioninio parko lankytojų centras" } as Bi,
+      distance: "50 m",
+    },
+    {
+      label: { en: "Akmenė railway station", lt: "Akmenės geležinkelio stotis" } as Bi,
+      distance: "3 km",
+    },
+  ],
 };

@@ -13,9 +13,6 @@ export default function Footer() {
         <div className="flex flex-col items-center text-center md:items-start md:text-left md:flex-row justify-between gap-14 pb-14 border-b border-white/10">
           <div>
             <Logo size="lg" theme="dark" className="mx-auto md:mx-0" />
-            <p className="mt-6 font-serif italic text-footer-paper/55 max-w-[280px] mx-auto md:mx-0 leading-[1.5]">
-              &ldquo;{t(footer.tagline.en, footer.tagline.lt)}&rdquo;
-            </p>
           </div>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-12 md:gap-20">
@@ -37,7 +34,7 @@ export default function Footer() {
               </h4>
               <div className="flex flex-col gap-3 text-[14.5px] text-footer-paper/75">
                 <span>Stoties g. 36</span>
-                <span>Venta, Lietuva</span>
+                <span>{t("Venta, Lithuania", "Venta, Lietuva")}</span>
               </div>
             </div>
             <div>
@@ -56,9 +53,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 text-center text-[12px] text-footer-paper/35">
+        <div className="pt-6 flex justify-end text-right text-[12px] text-footer-paper/35">
           <span>{footer.copyright}</span>
-          <span>{t(footer.madeWith.en, footer.madeWith.lt)}</span>
         </div>
       </div>
     </footer>

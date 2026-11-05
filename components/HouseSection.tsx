@@ -25,12 +25,12 @@ export default function HouseSection() {
           <Reveal>
             <div className="relative h-[380px] md:h-[520px] max-w-[340px] md:max-w-[420px] mx-auto lg:mx-0">
               <div className="absolute top-0 left-0 w-full h-[72%] overflow-hidden bg-stone/10">
-                <Image src="/images/house-exterior-hq.jpg" alt="Venta City Apartments exterior" fill sizes="420px" quality={90} className="object-cover" />
+                <Image src="/images/hero-exterior.jpg" alt={t("Venta City Apartments exterior", "„Venta City Apartments“ pastato išorė")} fill sizes="420px" quality={90} className="object-cover" />
               </div>
               <div className="absolute bottom-0 right-0 w-[58%] h-[42%] overflow-hidden border-4 border-linen bg-stone/10">
                 <Image
                   src="/images/dining.jpg"
-                  alt="Dining area"
+                  alt={t("Dining area", "Valgomojo zona")}
                   fill
                   sizes="260px"
                   quality={90}
